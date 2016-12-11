@@ -1,0 +1,369 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F6D356131CE298E7003316D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D356121CE298E7003316D9 /* AppDelegate.swift */; };
+		F6D356171CE298E7003316D9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D356161CE298E7003316D9 /* GameScene.swift */; };
+		F6D356191CE298E7003316D9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D356181CE298E7003316D9 /* GameViewController.swift */; };
+		F6D3561C1CE298E7003316D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6D3561A1CE298E7003316D9 /* Main.storyboard */; };
+		F6D3561E1CE298E7003316D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6D3561D1CE298E7003316D9 /* Assets.xcassets */; };
+		F6D356211CE298E7003316D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6D3561F1CE298E7003316D9 /* LaunchScreen.storyboard */; };
+		F6D3562A1CE29A18003316D9 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = F6D356291CE29A18003316D9 /* Sounds */; };
+		F6D3562C1CE29A46003316D9 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = F6D3562B1CE29A46003316D9 /* Sprites.atlas */; };
+		F6D3562E1CE2A2E6003316D9 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D3562D1CE2A2E6003316D9 /* Block.swift */; };
+		F6D356301CE2A46C003316D9 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D3562F1CE2A46C003316D9 /* Array2D.swift */; };
+		F6D356321CE2A4C7003316D9 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D356311CE2A4C7003316D9 /* Shape.swift */; };
+		F6D356341CE2A5DB003316D9 /* SquareShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D356331CE2A5DB003316D9 /* SquareShape.swift */; };
+		F6D356361CE2A5FB003316D9 /* TShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D356351CE2A5FB003316D9 /* TShape.swift */; };
+		F6D356381CE2A610003316D9 /* LineShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D356371CE2A610003316D9 /* LineShape.swift */; };
+		F6D3563A1CE2A625003316D9 /* LShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D356391CE2A625003316D9 /* LShape.swift */; };
+		F6D3563C1CE2A63D003316D9 /* JShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D3563B1CE2A63D003316D9 /* JShape.swift */; };
+		F6D3563E1CE2A653003316D9 /* SShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D3563D1CE2A653003316D9 /* SShape.swift */; };
+		F6D356401CE2A670003316D9 /* ZShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D3563F1CE2A670003316D9 /* ZShape.swift */; };
+		F6D356431CE2A6EC003316D9 /* Swiftris.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D356421CE2A6EC003316D9 /* Swiftris.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F6D3560F1CE298E7003316D9 /* Switris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Switris.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6D356121CE298E7003316D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F6D356161CE298E7003316D9 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		F6D356181CE298E7003316D9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		F6D3561B1CE298E7003316D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F6D3561D1CE298E7003316D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F6D356201CE298E7003316D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F6D356221CE298E7003316D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6D356291CE29A18003316D9 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
+		F6D3562B1CE29A46003316D9 /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
+		F6D3562D1CE2A2E6003316D9 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		F6D3562F1CE2A46C003316D9 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		F6D356311CE2A4C7003316D9 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		F6D356331CE2A5DB003316D9 /* SquareShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareShape.swift; sourceTree = "<group>"; };
+		F6D356351CE2A5FB003316D9 /* TShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TShape.swift; sourceTree = "<group>"; };
+		F6D356371CE2A610003316D9 /* LineShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineShape.swift; sourceTree = "<group>"; };
+		F6D356391CE2A625003316D9 /* LShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LShape.swift; sourceTree = "<group>"; };
+		F6D3563B1CE2A63D003316D9 /* JShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JShape.swift; sourceTree = "<group>"; };
+		F6D3563D1CE2A653003316D9 /* SShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SShape.swift; sourceTree = "<group>"; };
+		F6D3563F1CE2A670003316D9 /* ZShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZShape.swift; sourceTree = "<group>"; };
+		F6D356421CE2A6EC003316D9 /* Swiftris.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swiftris.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F6D3560C1CE298E7003316D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F6D356061CE298E7003316D9 = {
+			isa = PBXGroup;
+			children = (
+				F6D356111CE298E7003316D9 /* Switris */,
+				F6D356101CE298E7003316D9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F6D356101CE298E7003316D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F6D3560F1CE298E7003316D9 /* Switris.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F6D356111CE298E7003316D9 /* Switris */ = {
+			isa = PBXGroup;
+			children = (
+				F6D356121CE298E7003316D9 /* AppDelegate.swift */,
+				F6D356161CE298E7003316D9 /* GameScene.swift */,
+				F6D356421CE2A6EC003316D9 /* Swiftris.swift */,
+				F6D3562F1CE2A46C003316D9 /* Array2D.swift */,
+				F6D3562D1CE2A2E6003316D9 /* Block.swift */,
+				F6D356411CE2A6BB003316D9 /* Shapes */,
+				F6D356181CE298E7003316D9 /* GameViewController.swift */,
+				F6D3561A1CE298E7003316D9 /* Main.storyboard */,
+				F6D3562B1CE29A46003316D9 /* Sprites.atlas */,
+				F6D356291CE29A18003316D9 /* Sounds */,
+				F6D3561D1CE298E7003316D9 /* Assets.xcassets */,
+				F6D356281CE299EE003316D9 /* Supporting files */,
+			);
+			path = Switris;
+			sourceTree = "<group>";
+		};
+		F6D356281CE299EE003316D9 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				F6D3561F1CE298E7003316D9 /* LaunchScreen.storyboard */,
+				F6D356221CE298E7003316D9 /* Info.plist */,
+			);
+			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		F6D356411CE2A6BB003316D9 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				F6D356311CE2A4C7003316D9 /* Shape.swift */,
+				F6D356331CE2A5DB003316D9 /* SquareShape.swift */,
+				F6D356351CE2A5FB003316D9 /* TShape.swift */,
+				F6D356371CE2A610003316D9 /* LineShape.swift */,
+				F6D356391CE2A625003316D9 /* LShape.swift */,
+				F6D3563B1CE2A63D003316D9 /* JShape.swift */,
+				F6D3563D1CE2A653003316D9 /* SShape.swift */,
+				F6D3563F1CE2A670003316D9 /* ZShape.swift */,
+			);
+			name = Shapes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F6D3560E1CE298E7003316D9 /* Switris */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6D356251CE298E7003316D9 /* Build configuration list for PBXNativeTarget "Switris" */;
+			buildPhases = (
+				F6D3560B1CE298E7003316D9 /* Sources */,
+				F6D3560C1CE298E7003316D9 /* Frameworks */,
+				F6D3560D1CE298E7003316D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Switris;
+			productName = Switris;
+			productReference = F6D3560F1CE298E7003316D9 /* Switris.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F6D356071CE298E7003316D9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Mathieu Vandeginste";
+				TargetAttributes = {
+					F6D3560E1CE298E7003316D9 = {
+						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
+					};
+				};
+			};
+			buildConfigurationList = F6D3560A1CE298E7003316D9 /* Build configuration list for PBXProject "Switris" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F6D356061CE298E7003316D9;
+			productRefGroup = F6D356101CE298E7003316D9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F6D3560E1CE298E7003316D9 /* Switris */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F6D3560D1CE298E7003316D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6D356211CE298E7003316D9 /* LaunchScreen.storyboard in Resources */,
+				F6D3561E1CE298E7003316D9 /* Assets.xcassets in Resources */,
+				F6D3562A1CE29A18003316D9 /* Sounds in Resources */,
+				F6D3561C1CE298E7003316D9 /* Main.storyboard in Resources */,
+				F6D3562C1CE29A46003316D9 /* Sprites.atlas in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F6D3560B1CE298E7003316D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6D3563A1CE2A625003316D9 /* LShape.swift in Sources */,
+				F6D356341CE2A5DB003316D9 /* SquareShape.swift in Sources */,
+				F6D356171CE298E7003316D9 /* GameScene.swift in Sources */,
+				F6D3563C1CE2A63D003316D9 /* JShape.swift in Sources */,
+				F6D356431CE2A6EC003316D9 /* Swiftris.swift in Sources */,
+				F6D356321CE2A4C7003316D9 /* Shape.swift in Sources */,
+				F6D3562E1CE2A2E6003316D9 /* Block.swift in Sources */,
+				F6D356381CE2A610003316D9 /* LineShape.swift in Sources */,
+				F6D3563E1CE2A653003316D9 /* SShape.swift in Sources */,
+				F6D356361CE2A5FB003316D9 /* TShape.swift in Sources */,
+				F6D356191CE298E7003316D9 /* GameViewController.swift in Sources */,
+				F6D356131CE298E7003316D9 /* AppDelegate.swift in Sources */,
+				F6D356401CE2A670003316D9 /* ZShape.swift in Sources */,
+				F6D356301CE2A46C003316D9 /* Array2D.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F6D3561A1CE298E7003316D9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6D3561B1CE298E7003316D9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F6D3561F1CE298E7003316D9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6D356201CE298E7003316D9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F6D356231CE298E7003316D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F6D356241CE298E7003316D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F6D356261CE298E7003316D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Switris/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PrepApp.Switris;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Debug;
+		};
+		F6D356271CE298E7003316D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Switris/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PrepApp.Switris;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F6D3560A1CE298E7003316D9 /* Build configuration list for PBXProject "Switris" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6D356231CE298E7003316D9 /* Debug */,
+				F6D356241CE298E7003316D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6D356251CE298E7003316D9 /* Build configuration list for PBXNativeTarget "Switris" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6D356261CE298E7003316D9 /* Debug */,
+				F6D356271CE298E7003316D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F6D356071CE298E7003316D9 /* Project object */;
+}
