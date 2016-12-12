@@ -19,6 +19,7 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     var scene: GameScene!
     var swiftris:Swiftris!
     var panPointReference:CGPoint?
+    var enableTouch:Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +53,7 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     }
     
     @IBAction func didPan(sender: UIPanGestureRecognizer) {
+        if enableTouch{
         let currentPoint = sender.translationInView(self.view)
         if let originalPoint = panPointReference {
             // #3
@@ -68,14 +70,19 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         } else if sender.state == .Began {
             panPointReference = currentPoint
         }
+        }
     }
     
     @IBAction func didTap(sender: UITapGestureRecognizer) {
-        swiftris.rotateShape()
+          if enableTouch{
+            swiftris.rotateShape()
+        }
     }
     
     @IBAction func didSwipe(sender: UISwipeGestureRecognizer) {
-        swiftris.dropShape()
+          if enableTouch{
+            swiftris.dropShape()
+        }
     }
     
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -171,4 +178,22 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     func gameShapeDidMove(swiftris: Swiftris) {
         scene.redrawShape(swiftris.fallingShape!) {}
     }
+    
+    @IBAction func btnLeftTouch(sender: AnyObject) {
+          swiftris.moveShapeLeft()
+    }
+    
+    @IBAction func btnRightTouch(sender: AnyObject) {
+          swiftris.moveShapeRight()
+    }
+    
+    @IBAction func btnDownTouch(sender: AnyObject) {
+        swiftris.dropShape()
+    }
+    
+    @IBAction func btnRotateTouch(sender: AnyObject) {
+          swiftris.rotateShape()
+    }
+    @IBOutlet weak var btnPauseTouch: UIButton!
+    
 }

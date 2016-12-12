@@ -17,10 +17,12 @@ let StartingColumn = 4
 let StartingRow = 0
 
 let PreviewColumn = 12
-let PreviewRow = 1
+let PreviewRow = 3
 
 let PointsPerLine = 10
 let LevelThreshold = 500
+
+let numRownDown = 6
 
 protocol SwiftrisDelegate {
     // Invoked when the current round of Swiftris ends
@@ -99,8 +101,13 @@ class Swiftris {
         guard let shape = fallingShape else {
             return
         }
+        var rowDown = numRownDown
         while detectIllegalPlacement() == false {
+            rowDown -= 1
             shape.lowerShapeByOneRow()
+            if rowDown <= 0 {
+                break
+            }
         }
         shape.raiseShapeByOneRow()
         delegate?.gameShapeDidDrop(self)
