@@ -116,7 +116,7 @@
                                             <constraint firstAttribute="width" constant="54" id="e5n-dd-eo5"/>
                                         </constraints>
                                         <state key="normal" image="leftButton"/>
-                                        <state key="highlighted" image="leftButton_p"/>
+                                        <state key="highlighted" image="leftButtton_p"/>
                                         <connections>
                                             <action selector="btnLeftTouch:" destination="BV1-FR-VrT" eventType="touchUpInside" id="xrP-8O-l3K"/>
                                         </connections>
@@ -381,7 +381,7 @@
         <image name="downButton_p" width="50" height="50"/>
         <image name="gamover" width="138" height="38"/>
         <image name="leftButton" width="50" height="50"/>
-        <image name="leftButton_p" width="84" height="100"/>
+        <image name="leftButtton_p" width="50" height="50"/>
         <image name="menu" width="53" height="36"/>
         <image name="music" width="40" height="36"/>
         <image name="newgame" width="79" height="36"/>

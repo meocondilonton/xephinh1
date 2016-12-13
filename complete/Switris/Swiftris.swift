@@ -10,13 +10,14 @@
 import Foundation
 
 // #5
-let NumColumns = 10
-let NumRows = ScreenSize.IS_IPHONE_4_OR_LESS ? 18 : 20
+let NumColumns = ScreenSize.IS_IPHONE_5_OR_LESS ? 10 : 12
+
+let NumRows = ScreenSize.IS_IPHONE_4_OR_LESS ? 18 : ScreenSize.IS_IPHONE_5 ? 20 : 26
 
 let StartingColumn = 4
 let StartingRow = 0
 
-let PreviewColumn = 12
+let PreviewColumn = ScreenSize.IS_IPHONE_5_OR_LESS ? 12 : 14
 let PreviewRow = 3
 
 let PointsPerLine = 10
