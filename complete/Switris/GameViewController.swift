@@ -199,12 +199,15 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
           swiftris.rotateShape()
     }
     @IBAction func btnPauseTouch(sender: AnyObject) {
+        self.vGameOver.showDialog()
     }
     
     @IBAction func btnMenuTouch(sender: AnyObject) {
+        
     }
    
     @IBAction func btnNewGameTouch(sender: AnyObject) {
+         self.vGameOver.dismisDialog()
     }
     
     
