@@ -26,6 +26,8 @@
 		F6D3563E1CE2A653003316D9 /* SShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D3563D1CE2A653003316D9 /* SShape.swift */; };
 		F6D356401CE2A670003316D9 /* ZShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D3563F1CE2A670003316D9 /* ZShape.swift */; };
 		F6D356431CE2A6EC003316D9 /* Swiftris.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D356421CE2A6EC003316D9 /* Swiftris.swift */; };
+		FD5897571DFE715C00A60D39 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5897561DFE715C00A60D39 /* MenuViewController.swift */; };
+		FD5897671DFF9B7000A60D39 /* GameOverDailog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5897661DFF9B7000A60D39 /* GameOverDailog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		F6D3563D1CE2A653003316D9 /* SShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SShape.swift; sourceTree = "<group>"; };
 		F6D3563F1CE2A670003316D9 /* ZShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZShape.swift; sourceTree = "<group>"; };
 		F6D356421CE2A6EC003316D9 /* Swiftris.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swiftris.swift; sourceTree = "<group>"; };
+		FD5897561DFE715C00A60D39 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		FD5897661DFF9B7000A60D39 /* GameOverDailog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverDailog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,11 +93,13 @@
 				F6D3562D1CE2A2E6003316D9 /* Block.swift */,
 				F6D356411CE2A6BB003316D9 /* Shapes */,
 				F6D356181CE298E7003316D9 /* GameViewController.swift */,
+				FD5897561DFE715C00A60D39 /* MenuViewController.swift */,
 				F6D3561A1CE298E7003316D9 /* Main.storyboard */,
 				F6D3562B1CE29A46003316D9 /* Sprites.atlas */,
 				F6D356291CE29A18003316D9 /* Sounds */,
 				F6D3561D1CE298E7003316D9 /* Assets.xcassets */,
 				F6D356281CE299EE003316D9 /* Supporting files */,
+				FD5897661DFF9B7000A60D39 /* GameOverDailog.swift */,
 			);
 			path = Switris;
 			sourceTree = "<group>";
@@ -197,9 +203,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6D3563A1CE2A625003316D9 /* LShape.swift in Sources */,
+				FD5897571DFE715C00A60D39 /* MenuViewController.swift in Sources */,
 				F6D356341CE2A5DB003316D9 /* SquareShape.swift in Sources */,
 				F6D356171CE298E7003316D9 /* GameScene.swift in Sources */,
 				F6D3563C1CE2A63D003316D9 /* JShape.swift in Sources */,
+				FD5897671DFF9B7000A60D39 /* GameOverDailog.swift in Sources */,
 				F6D356431CE2A6EC003316D9 /* Swiftris.swift in Sources */,
 				F6D356321CE2A4C7003316D9 /* Shape.swift in Sources */,
 				F6D3562E1CE2A2E6003316D9 /* Block.swift in Sources */,
@@ -327,6 +335,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = PrepApp.Switris;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -339,6 +348,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = PrepApp.Switris;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
