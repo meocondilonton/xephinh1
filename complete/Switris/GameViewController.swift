@@ -12,9 +12,13 @@ import SpriteKit
 class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognizerDelegate {
     
     
-    @IBOutlet weak var levelLabel: UILabel!
+   
     
+    
+    @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    
+    @IBOutlet weak var vGameOver: GameOverDailog!
     
     var scene: GameScene!
     var swiftris:Swiftris!
@@ -194,6 +198,14 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     @IBAction func btnRotateTouch(sender: AnyObject) {
           swiftris.rotateShape()
     }
-    @IBOutlet weak var btnPauseTouch: UIButton!
+    @IBAction func btnPauseTouch(sender: AnyObject) {
+    }
+    
+    @IBAction func btnMenuTouch(sender: AnyObject) {
+    }
+   
+    @IBAction func btnNewGameTouch(sender: AnyObject) {
+    }
+    
     
 }
