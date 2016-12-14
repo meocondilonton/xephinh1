@@ -13,7 +13,9 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     
     
    
+    @IBOutlet weak var contraitBottomGBtn: NSLayoutConstraint!
     
+    @IBOutlet weak var contraitHudScore: NSLayoutConstraint!
     
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -29,6 +31,10 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     override func viewDidLoad() {
         super.viewDidLoad()
         // Configure the view.
+        if ScreenSize.IS_IPHONE_4_OR_LESS {
+            contraitBottomGBtn.constant = -15
+            contraitHudScore.constant = 100
+        }
         let skView = view as! SKView
         skView.multipleTouchEnabled = false
         
