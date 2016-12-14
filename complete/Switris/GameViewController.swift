@@ -17,6 +17,7 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var highLabel: UILabel!
     
     @IBOutlet weak var vGameOver: GameOverDailog!
     
