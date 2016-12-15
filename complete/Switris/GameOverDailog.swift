@@ -16,7 +16,10 @@ class GameOverDailog: UIView {
     @IBOutlet weak var lblYourScore: UILabel!
     
     
-    func showDialog(){
+    func showDialog(high:Int,score:Int){
+        lblHighSocre.text =  "HIGH SCORE: \(high)"
+        lblYourScore.text =  "YOUR SCORE: \(score)"
+        
         self.imgBgDailog.image?.resizableImageWithCapInsets(UIEdgeInsets.init(top: 15, left: 15, bottom: 15, right: 15), resizingMode: UIImageResizingMode.Stretch)
         
         self.hidden = false
