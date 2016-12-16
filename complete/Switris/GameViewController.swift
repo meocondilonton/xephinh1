@@ -28,6 +28,7 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     var swiftris:Swiftris!
     var panPointReference:CGPoint?
     var enableTouch:Bool = false
+    var block:(()->())?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +49,8 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         swiftris = Swiftris()
         swiftris.delegate = self
         swiftris.beginGame()
-        
+        scene.playSound("Sounds/new_game.mp3")
+        scene.playBgSound()
         // Present the scene.
         skView.presentScene(scene)
         
@@ -150,9 +152,10 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
 //        view.userInteractionEnabled = false
          
         scene.stopTicking()
+        self.scene.stopBgSound()
         scene.playSound("Sounds/gameover.mp3")
         scene.animateCollapsingLines(swiftris.removeAllBlocks(), fallenBlocks: swiftris.removeAllBlocks()) {[weak self] in
- 
+            
             let prefs = NSUserDefaults.standardUserDefaults()
             var highScore = prefs.integerForKey("highScore") ?? 0
             let score = self?.swiftris.score ?? 0
@@ -232,12 +235,17 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     @IBAction func btnMenuTouch(sender: AnyObject) {
          self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
          self.dismissViewControllerAnimated(true, completion: nil)
+        if (block != nil) {
+            block!()
+        }
     }
    
     @IBAction func btnNewGameTouch(sender: AnyObject) {
          self.vGameOver.dismisDialog()
-      
+        
+          scene.playSound("Sounds/new_game.mp3")
           swiftris.beginGame()
+          scene.playBgSound()
     }
     
     

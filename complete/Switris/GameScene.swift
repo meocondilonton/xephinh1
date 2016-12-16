@@ -7,7 +7,7 @@
 //
 
 import SpriteKit
-
+import AVFoundation
 
 let BlockSize:CGFloat = 20.0
 let TickLengthLevelOne = NSTimeInterval(600)
@@ -23,7 +23,8 @@ class GameScene: SKScene {
     var lastTick:NSDate?
     
     var textureCache = Dictionary<String, SKTexture>()
-    
+    var backgroundAudio = AVPlayer(URL:NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("Sounds/theme",ofType:"mp3")!))
+
     required init(coder aDecoder: NSCoder) {
         fatalError("NSCoder not supported")
     }
@@ -49,7 +50,21 @@ class GameScene: SKScene {
         shapeLayer.addChild(gameBoard)
         gameLayer.addChild(shapeLayer)
         
-        runAction(SKAction.repeatActionForever(SKAction.playSoundFileNamed("Sounds/theme.mp3", waitForCompletion: true)))
+//        runAction(SKAction.repeatActionForever(SKAction.playSoundFileNamed("Sounds/theme.mp3", waitForCompletion: true)),withKey:"soundbg")
+    }
+    
+    func stopBgSound(){
+//        self.removeActionForKey("soundbg")
+         backgroundAudio.pause()
+    }
+    
+    func playBgSound(){
+       runAction(SKAction.waitForDuration(2.2)) {[weak self] in
+//          self?.runAction(SKAction.repeatActionForever(SKAction.playSoundFileNamed("Sounds/theme.mp3", waitForCompletion: true)),withKey:"soundbg")
+         self?.backgroundAudio.play()
+        }
+       
+      
     }
     
     func playSound(sound:String) {

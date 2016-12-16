@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MenuViewController: UIViewController {
-
+    var backgroundAudio = AVPlayer(URL:NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("Sounds/background",ofType:"mp3")!))
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,14 +22,29 @@ class MenuViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewDidAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+         backgroundAudio.play()
+    }
+   
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        backgroundAudio.pause()
+    }
+    
     @IBAction func btnPlayTouch(sender: AnyObject) {
+          backgroundAudio.pause()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("GameViewController")
+        let vc = storyboard.instantiateViewControllerWithIdentifier("GameViewController") as! GameViewController
          vc.modalPresentationStyle =  .Custom
         vc.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         self.presentViewController(vc, animated: true) { 
             
+        }
+        vc.block = {[weak self] () -> ()  in
+            self?.backgroundAudio.play()
+
         }
        
         
