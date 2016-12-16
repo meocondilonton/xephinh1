@@ -13,10 +13,19 @@ class MenuViewController: UIViewController {
     var backgroundAudio = AVPlayer(URL:NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("Sounds/background",ofType:"mp3")!))
     override func viewDidLoad() {
         super.viewDidLoad()
-
+   NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MenuViewController.gotoForceground(_:)), name:"NotificationEnterForeground", object: nil)
+        
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MenuViewController.gotoBackground(_:)), name:"NotificationEnterBackground", object: nil)
       
     }
 
+    func gotoForceground(notification: NSNotification){
+        self.backgroundAudio.play()
+    }
+    
+    func gotoBackground(notification: NSNotification){
+          backgroundAudio.pause()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
