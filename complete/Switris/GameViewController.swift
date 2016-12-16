@@ -17,6 +17,7 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     
     @IBOutlet weak var contraitHudScore: NSLayoutConstraint!
     
+   
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var highLabel: UILabel!
@@ -128,6 +129,10 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     }
     
     func gameDidBegin(swiftris: Swiftris) {
+        let prefs = NSUserDefaults.standardUserDefaults()
+        let highScore = prefs.integerForKey("highScore") ?? 0
+        
+        highLabel.text = "\(highScore)"
         levelLabel.text = "\(swiftris.level)"
         scoreLabel.text = "\(swiftris.score)"
         scene.tickLengthMillis = TickLengthLevelOne
@@ -142,11 +147,23 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     }
     
     func gameDidEnd(swiftris: Swiftris) {
-        view.userInteractionEnabled = false
+//        view.userInteractionEnabled = false
+         
         scene.stopTicking()
         scene.playSound("Sounds/gameover.mp3")
-        scene.animateCollapsingLines(swiftris.removeAllBlocks(), fallenBlocks: swiftris.removeAllBlocks()) {
-            swiftris.beginGame()
+        scene.animateCollapsingLines(swiftris.removeAllBlocks(), fallenBlocks: swiftris.removeAllBlocks()) {[weak self] in
+ 
+            let prefs = NSUserDefaults.standardUserDefaults()
+            var highScore = prefs.integerForKey("highScore") ?? 0
+            let score = self?.swiftris.score ?? 0
+          
+            self?.vGameOver.showDialog(highScore, score: score)
+            if highScore < score {
+                highScore = score
+                prefs.setValue(highScore, forKey: "highScore")
+                prefs.synchronize()
+            }
+            
         }
     }
     
@@ -170,7 +187,7 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     
     func gameShapeDidLand(swiftris: Swiftris) {
         scene.stopTicking()
-        self.view.userInteractionEnabled = false
+//        self.view.userInteractionEnabled = false
         // #10
         let removedLines = swiftris.removeCompletedLines()
         if removedLines.linesRemoved.count > 0 {
@@ -206,15 +223,21 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
           swiftris.rotateShape()
     }
     @IBAction func btnPauseTouch(sender: AnyObject) {
-        self.vGameOver.showDialog()
+        let prefs = NSUserDefaults.standardUserDefaults()
+        let highScore = prefs.integerForKey("highScore") ?? 0
+
+        self.vGameOver.showDialog(highScore, score: swiftris.score)
     }
     
     @IBAction func btnMenuTouch(sender: AnyObject) {
-        
+         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+         self.dismissViewControllerAnimated(true, completion: nil)
     }
    
     @IBAction func btnNewGameTouch(sender: AnyObject) {
          self.vGameOver.dismisDialog()
+      
+          swiftris.beginGame()
     }
     
     
