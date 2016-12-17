@@ -8,32 +8,17 @@
 
 import UIKit
 import AVFoundation
-import FBAudienceNetwork
 
-class MenuViewController: UIViewController ,FBInterstitialAdDelegate {
+class MenuViewController: UIViewController {
     var backgroundAudio = AVPlayer(URL:NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("Sounds/background",ofType:"mp3")!))
-     var interstitialAd:FBInterstitialAd!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MenuViewController.gotoForceground(_:)), name:"NotificationEnterForeground", object: nil)
         
     NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MenuViewController.gotoBackground(_:)), name:"NotificationEnterBackground", object: nil)
       
-        interstitialAd = FBInterstitialAd(placementID: "219892538457986_219904085123498")
-        interstitialAd.delegate = self
-        interstitialAd.loadAd()
-        
     }
 
-    func interstitialAdDidLoad(interstitialAd: FBInterstitialAd) {
-        
-    }
-    
-    func interstitialAdDidClose(interstitialAd: FBInterstitialAd) {
-        interstitialAd.loadAd()
-    }
-    
     func gotoForceground(notification: NSNotification){
         self.backgroundAudio.play()
     }
@@ -68,7 +53,7 @@ class MenuViewController: UIViewController ,FBInterstitialAdDelegate {
         }
         vc.block = {[weak self] () -> ()  in
             self?.backgroundAudio.play()
-            self?.interstitialAd.showAdFromRootViewController(self)
+
         }
        
         
