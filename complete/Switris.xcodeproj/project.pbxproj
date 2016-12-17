@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36C1DC8BB2998E50D18BC528 /* Pods_Switris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C31A8D772176BA4BC68BAA3 /* Pods_Switris.framework */; };
 		F6D356131CE298E7003316D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D356121CE298E7003316D9 /* AppDelegate.swift */; };
 		F6D356171CE298E7003316D9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D356161CE298E7003316D9 /* GameScene.swift */; };
 		F6D356191CE298E7003316D9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D356181CE298E7003316D9 /* GameViewController.swift */; };
@@ -31,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C31A8D772176BA4BC68BAA3 /* Pods_Switris.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Switris.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F0FBD3DDCB9CEDA7025FB9C /* Pods-Switris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switris.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Switris/Pods-Switris.debug.xcconfig"; sourceTree = "<group>"; };
+		F0AC4D2681371320193A47E5 /* Pods-Switris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switris.release.xcconfig"; path = "Pods/Target Support Files/Pods-Switris/Pods-Switris.release.xcconfig"; sourceTree = "<group>"; };
 		F6D3560F1CE298E7003316D9 /* Switris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Switris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6D356121CE298E7003316D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6D356161CE298E7003316D9 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -61,17 +65,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36C1DC8BB2998E50D18BC528 /* Pods_Switris.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1581FAD34BF0EA2B483B32DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F0FBD3DDCB9CEDA7025FB9C /* Pods-Switris.debug.xcconfig */,
+				F0AC4D2681371320193A47E5 /* Pods-Switris.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1E9A9BDDA42EF1934BF6B8E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C31A8D772176BA4BC68BAA3 /* Pods_Switris.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F6D356061CE298E7003316D9 = {
 			isa = PBXGroup;
 			children = (
 				F6D356111CE298E7003316D9 /* Switris */,
 				F6D356101CE298E7003316D9 /* Products */,
+				1581FAD34BF0EA2B483B32DB /* Pods */,
+				1E9A9BDDA42EF1934BF6B8E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,9 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6D356251CE298E7003316D9 /* Build configuration list for PBXNativeTarget "Switris" */;
 			buildPhases = (
+				AF3DFD33A61D2F7844BC48DA /* [CP] Check Pods Manifest.lock */,
 				F6D3560B1CE298E7003316D9 /* Sources */,
 				F6D3560C1CE298E7003316D9 /* Frameworks */,
 				F6D3560D1CE298E7003316D9 /* Resources */,
+				9548F435D22C603F8448E546 /* [CP] Embed Pods Frameworks */,
+				2D5BBEEFCCA8F3B4C6C68DE0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,6 +224,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D5BBEEFCCA8F3B4C6C68DE0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Switris/Pods-Switris-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9548F435D22C603F8448E546 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Switris/Pods-Switris-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF3DFD33A61D2F7844BC48DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F6D3560B1CE298E7003316D9 /* Sources */ = {
@@ -329,6 +404,7 @@
 		};
 		F6D356261CE298E7003316D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F0FBD3DDCB9CEDA7025FB9C /* Pods-Switris.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -345,6 +421,7 @@
 		};
 		F6D356271CE298E7003316D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0AC4D2681371320193A47E5 /* Pods-Switris.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

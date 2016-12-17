@@ -8,8 +8,9 @@
 
 import UIKit
 import SpriteKit
+import FBAudienceNetwork
 
-class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognizerDelegate {
+class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognizerDelegate ,FBInterstitialAdDelegate {
     
     
    
@@ -23,6 +24,8 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     @IBOutlet weak var highLabel: UILabel!
     
     @IBOutlet weak var vGameOver: GameOverDailog!
+    
+    var interstitialAd:FBInterstitialAd!
     
     var scene: GameScene!
     var swiftris:Swiftris!
@@ -54,10 +57,21 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         // Present the scene.
         skView.presentScene(scene)
         
+        interstitialAd = FBInterstitialAd(placementID: "219892538457986_219893525124554")
+        interstitialAd.delegate = self
+        interstitialAd.loadAd()
+        
 
     }
     
-
+    func interstitialAdDidLoad(interstitialAd: FBInterstitialAd) {
+      
+    }
+    
+    func interstitialAdDidClose(interstitialAd: FBInterstitialAd) {
+          interstitialAd.loadAd()
+    }
+    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
@@ -166,6 +180,7 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
                 prefs.setValue(highScore, forKey: "highScore")
                 prefs.synchronize()
             }
+              self?.interstitialAd.showAdFromRootViewController(self)
             
         }
     }
