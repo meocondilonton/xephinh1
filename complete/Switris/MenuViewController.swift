@@ -10,6 +10,10 @@ import UIKit
 import AVFoundation
 
 class MenuViewController: UIViewController {
+    
+ 
+    
+    @IBOutlet weak var btnMusic: UIButton!
     var backgroundAudio = AVPlayer(URL:NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("Sounds/background",ofType:"mp3")!))
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +38,11 @@ class MenuViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewWillAppear(animated)
          backgroundAudio.play()
+        if self.isMusicOn() {
+            self.btnMusic.selected = false
+        }else{
+            self.btnMusic.selected = true
+        }
     }
    
     
@@ -53,19 +62,31 @@ class MenuViewController: UIViewController {
         }
         vc.block = {[weak self] () -> ()  in
             self?.backgroundAudio.play()
-
+            if self?.isMusicOn() == true {
+                self?.btnMusic.selected = false
+            }else{
+                self?.btnMusic.selected = true
+            }
         }
        
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func btnRateTouch(sender: AnyObject) {
     }
-    */
+    @IBAction func btnMusicTouch(sender: AnyObject) {
+    }
+    func setMusic(){
+        let prefs = NSUserDefaults.standardUserDefaults()
+        let isMusicOn = prefs.boolForKey("music")
+        prefs.setValue(!isMusicOn, forKey: "music")
+        prefs.synchronize()
+    }
+    
+    func isMusicOn() -> Bool {
+        let prefs = NSUserDefaults.standardUserDefaults()
+        let isMusicOn = prefs.boolForKey("music")
+        return isMusicOn
+    }
 
 }

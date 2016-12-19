@@ -1,0 +1,29 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "EA1712F62FDE7FF687AF393C1415DA4417422A0A+++FD0B181" : 9223372036854775807,
+    "EA1712F62FDE7FF687AF393C1415DA4417422A0A+++294C9A2" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3A2CF383-8285-4620-BD30-684CA51D7B23",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "EA1712F62FDE7FF687AF393C1415DA4417422A0A+++FD0B181" : "",
+    "EA1712F62FDE7FF687AF393C1415DA4417422A0A+++294C9A2" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Switris",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Switris.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/meocondilonton\/xephinh1.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EA1712F62FDE7FF687AF393C1415DA4417422A0A+++294C9A2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/meocondilonton\/xephinh1.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EA1712F62FDE7FF687AF393C1415DA4417422A0A+++FD0B181"
+    }
+  ]
+}

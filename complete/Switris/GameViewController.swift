@@ -23,8 +23,10 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var highLabel: UILabel!
     
+    @IBOutlet weak var vGamePause: GamePauseDailog!
     @IBOutlet weak var vGameOver: GameOverDailog!
     
+    @IBOutlet weak var btnMusic: UIButton!
     var interstitialAd:FBInterstitialAd!
     
     var scene: GameScene!
@@ -60,6 +62,12 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         interstitialAd = FBInterstitialAd(placementID: "219892538457986_219893525124554")
         interstitialAd.delegate = self
         interstitialAd.loadAd()
+        
+        if self.isMusicOn() {
+            self.btnMusic.selected = false
+        }else{
+            self.btnMusic.selected = true
+        }
         
 
     }
@@ -241,10 +249,8 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
           swiftris.rotateShape()
     }
     @IBAction func btnPauseTouch(sender: AnyObject) {
-        let prefs = NSUserDefaults.standardUserDefaults()
-        let highScore = prefs.integerForKey("highScore") ?? 0
-
-        self.vGameOver.showDialog(highScore, score: swiftris.score)
+            scene.stopTicking()
+            self.vGamePause.showDialog()
     }
     
     @IBAction func btnMenuTouch(sender: AnyObject) {
@@ -263,5 +269,50 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
           scene.playBgSound()
     }
     
+    //gamepause
+    
+   
+    @IBAction func newGameTouch(sender: AnyObject) {
+        self.vGamePause.dismisDialog()
+        
+        scene.playSound("Sounds/new_game.mp3")
+        swiftris.beginGame()
+        scene.playBgSound()
+    }
+    
+    @IBAction func continueTouch(sender: AnyObject) {
+        scene.startTicking()
+    }
+    
+    @IBAction func menuTouch(sender: AnyObject) {
+        self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        self.dismissViewControllerAnimated(true, completion: nil)
+        if (block != nil) {
+            block!()
+        }
+
+    }
+    
+    @IBAction func musicTouch(sender: AnyObject) {
+       self.setMusic()
+        if self.isMusicOn() {
+            self.btnMusic.selected = false
+        }else{
+             self.btnMusic.selected = true
+        }
+    }
+    
+    func setMusic(){
+        let prefs = NSUserDefaults.standardUserDefaults()
+        let isMusicOn = prefs.boolForKey("music")
+        prefs.setValue(!isMusicOn, forKey: "music")
+        prefs.synchronize()
+    }
+    
+    func isMusicOn() -> Bool {
+        let prefs = NSUserDefaults.standardUserDefaults()
+        let isMusicOn = prefs.boolForKey("music")
+        return isMusicOn
+    }
     
 }

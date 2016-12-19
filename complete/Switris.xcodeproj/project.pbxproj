@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		36C1DC8BB2998E50D18BC528 /* Pods_Switris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C31A8D772176BA4BC68BAA3 /* Pods_Switris.framework */; };
+		4178EE741E0768FC00520A90 /* GamePauseDailog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178EE731E0768FC00520A90 /* GamePauseDailog.swift */; };
 		F6D356131CE298E7003316D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D356121CE298E7003316D9 /* AppDelegate.swift */; };
 		F6D356171CE298E7003316D9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D356161CE298E7003316D9 /* GameScene.swift */; };
 		F6D356191CE298E7003316D9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D356181CE298E7003316D9 /* GameViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4178EE731E0768FC00520A90 /* GamePauseDailog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePauseDailog.swift; sourceTree = "<group>"; };
 		4C31A8D772176BA4BC68BAA3 /* Pods_Switris.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Switris.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F0FBD3DDCB9CEDA7025FB9C /* Pods-Switris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switris.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Switris/Pods-Switris.debug.xcconfig"; sourceTree = "<group>"; };
 		F0AC4D2681371320193A47E5 /* Pods-Switris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switris.release.xcconfig"; path = "Pods/Target Support Files/Pods-Switris/Pods-Switris.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				F6D3561D1CE298E7003316D9 /* Assets.xcassets */,
 				F6D356281CE299EE003316D9 /* Supporting files */,
 				FD5897661DFF9B7000A60D39 /* GameOverDailog.swift */,
+				4178EE731E0768FC00520A90 /* GamePauseDailog.swift */,
 			);
 			path = Switris;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				FD5897571DFE715C00A60D39 /* MenuViewController.swift in Sources */,
 				F6D356341CE2A5DB003316D9 /* SquareShape.swift in Sources */,
 				F6D356171CE298E7003316D9 /* GameScene.swift in Sources */,
+				4178EE741E0768FC00520A90 /* GamePauseDailog.swift in Sources */,
 				F6D3563C1CE2A63D003316D9 /* JShape.swift in Sources */,
 				FD5897671DFF9B7000A60D39 /* GameOverDailog.swift in Sources */,
 				F6D356431CE2A6EC003316D9 /* Swiftris.swift in Sources */,
