@@ -28,6 +28,7 @@
 		F6D3563E1CE2A653003316D9 /* SShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D3563D1CE2A653003316D9 /* SShape.swift */; };
 		F6D356401CE2A670003316D9 /* ZShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D3563F1CE2A670003316D9 /* ZShape.swift */; };
 		F6D356431CE2A6EC003316D9 /* Swiftris.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D356421CE2A6EC003316D9 /* Swiftris.swift */; };
+		FD23AA811E092A8C004F5571 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD23AA801E092A8C004F5571 /* Utils.swift */; };
 		FD5897571DFE715C00A60D39 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5897561DFE715C00A60D39 /* MenuViewController.swift */; };
 		FD5897671DFF9B7000A60D39 /* GameOverDailog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5897661DFF9B7000A60D39 /* GameOverDailog.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		F6D3563D1CE2A653003316D9 /* SShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SShape.swift; sourceTree = "<group>"; };
 		F6D3563F1CE2A670003316D9 /* ZShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZShape.swift; sourceTree = "<group>"; };
 		F6D356421CE2A6EC003316D9 /* Swiftris.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swiftris.swift; sourceTree = "<group>"; };
+		FD23AA801E092A8C004F5571 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		FD5897561DFE715C00A60D39 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FD5897661DFF9B7000A60D39 /* GameOverDailog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverDailog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +129,7 @@
 				F6D356281CE299EE003316D9 /* Supporting files */,
 				FD5897661DFF9B7000A60D39 /* GameOverDailog.swift */,
 				4178EE731E0768FC00520A90 /* GamePauseDailog.swift */,
+				FD23AA801E092A8C004F5571 /* Utils.swift */,
 			);
 			path = Switris;
 			sourceTree = "<group>";
@@ -190,7 +193,7 @@
 				TargetAttributes = {
 					F6D3560E1CE298E7003316D9 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = ZTA488SNYR;
+						DevelopmentTeam = 69MKC2TESR;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -292,6 +295,7 @@
 				F6D356321CE2A4C7003316D9 /* Shape.swift in Sources */,
 				F6D3562E1CE2A2E6003316D9 /* Block.swift in Sources */,
 				F6D356381CE2A610003316D9 /* LineShape.swift in Sources */,
+				FD23AA811E092A8C004F5571 /* Utils.swift in Sources */,
 				F6D3563E1CE2A653003316D9 /* SShape.swift in Sources */,
 				F6D356361CE2A5FB003316D9 /* TShape.swift in Sources */,
 				F6D356191CE298E7003316D9 /* GameViewController.swift in Sources */,
@@ -412,7 +416,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = ZTA488SNYR;
+				DEVELOPMENT_TEAM = 69MKC2TESR;
 				INFOPLIST_FILE = Switris/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -429,7 +433,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = ZTA488SNYR;
+				DEVELOPMENT_TEAM = 69MKC2TESR;
 				INFOPLIST_FILE = Switris/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

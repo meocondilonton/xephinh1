@@ -63,7 +63,7 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         interstitialAd.delegate = self
         interstitialAd.loadAd()
         
-        if self.isMusicOn() {
+        if Utils.isMusicOn() {
             self.btnMusic.selected = false
         }else{
             self.btnMusic.selected = true
@@ -248,8 +248,9 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     @IBAction func btnRotateTouch(sender: AnyObject) {
           swiftris.rotateShape()
     }
+    
     @IBAction func btnPauseTouch(sender: AnyObject) {
-            scene.stopTicking()
+            scene.pauseGame()
             self.vGamePause.showDialog()
     }
     
@@ -271,20 +272,52 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     
     //gamepause
     
+     func gameForceNewGame(swiftris: Swiftris) {
    
+        scene.stopTicking()
+        self.scene.stopBgSound()
+   
+        for (columnIdx, column) in swiftris.removeAllBlocks().enumerate() {
+            for (blockIdx, block) in column.enumerate() {
+               
+                let sprite = block.sprite!
+                sprite.removeFromParent()
+            }
+        }
+        if let blocks = swiftris.fallingShape?.blocks {
+        for bl  in blocks {
+              bl.sprite!.removeFromParent()
+        }
+        }
+        
+            self.scene.playSound("Sounds/new_game.mp3")
+            self.swiftris.beginGame()
+        if Utils.isMusicOn() {
+            self.btnMusic.selected = false
+            self.scene.playBgSound()
+        }else{
+            self.btnMusic.selected = true
+            scene.backgroundAudio.pause()
+            
+        }
+        
+       
+    }
+ 
     @IBAction func newGameTouch(sender: AnyObject) {
         self.vGamePause.dismisDialog()
-        
-        scene.playSound("Sounds/new_game.mp3")
-        swiftris.beginGame()
-        scene.playBgSound()
+             scene.resumeGame()
+        self.swiftris.forceNewGame()
+      
     }
     
     @IBAction func continueTouch(sender: AnyObject) {
-        scene.startTicking()
+        scene.resumeGame()
+        self.vGamePause.dismisDialog()
     }
     
     @IBAction func menuTouch(sender: AnyObject) {
+          scene.backgroundAudio.pause()
         self.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         self.dismissViewControllerAnimated(true, completion: nil)
         if (block != nil) {
@@ -294,25 +327,20 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     }
     
     @IBAction func musicTouch(sender: AnyObject) {
-       self.setMusic()
-        if self.isMusicOn() {
+       Utils.setMusic()
+        if Utils.isMusicOn() {
             self.btnMusic.selected = false
+             scene.backgroundAudio.play()
         }else{
              self.btnMusic.selected = true
+             scene.backgroundAudio.pause()
+            
         }
+          scene.resumeGame()
+        self.vGamePause.dismisDialog()
+      
     }
     
-    func setMusic(){
-        let prefs = NSUserDefaults.standardUserDefaults()
-        let isMusicOn = prefs.boolForKey("music")
-        prefs.setValue(!isMusicOn, forKey: "music")
-        prefs.synchronize()
-    }
-    
-    func isMusicOn() -> Bool {
-        let prefs = NSUserDefaults.standardUserDefaults()
-        let isMusicOn = prefs.boolForKey("music")
-        return isMusicOn
-    }
+  
     
 }

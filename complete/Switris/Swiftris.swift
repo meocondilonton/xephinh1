@@ -43,6 +43,9 @@ protocol SwiftrisDelegate {
     
     // Invoked when the game has reached a new level
     func gameDidLevelUp(swiftris: Swiftris)
+    
+    func gameForceNewGame(swiftris: Swiftris)
+
 }
 
 class Swiftris {
@@ -222,6 +225,11 @@ class Swiftris {
         delegate?.gameDidEnd(self)
 //        score = 0
 //        level = 1
+    }
+    
+    func forceNewGame() {
+          delegate?.gameForceNewGame(self)
+        
     }
     
     func removeCompletedLines() -> (linesRemoved: Array<Array<Block>>, fallenBlocks: Array<Array<Block>>) {

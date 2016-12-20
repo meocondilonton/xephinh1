@@ -22,6 +22,7 @@ class GameScene: SKScene {
     var tickLengthMillis = TickLengthLevelOne
     var lastTick:NSDate?
     
+    
     var textureCache = Dictionary<String, SKTexture>()
     var backgroundAudio = AVPlayer(URL:NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("Sounds/theme",ofType:"mp3")!))
 
@@ -50,35 +51,43 @@ class GameScene: SKScene {
         shapeLayer.addChild(gameBoard)
         gameLayer.addChild(shapeLayer)
         
-//        runAction(SKAction.repeatActionForever(SKAction.playSoundFileNamed("Sounds/theme.mp3", waitForCompletion: true)),withKey:"soundbg")
+ 
     }
     
     func stopBgSound(){
-//        self.removeActionForKey("soundbg")
+ 
          backgroundAudio.pause()
     }
     
     func playBgSound(){
        runAction(SKAction.waitForDuration(2.2)) {[weak self] in
-//          self?.runAction(SKAction.repeatActionForever(SKAction.playSoundFileNamed("Sounds/theme.mp3", waitForCompletion: true)),withKey:"soundbg")
-         self?.backgroundAudio.play()
+        if Utils.isMusicOn() {
+             self?.backgroundAudio.play()
+        }
+        
         }
        
       
     }
     
     func playSound(sound:String) {
-        runAction(SKAction.playSoundFileNamed(sound, waitForCompletion: false))
+         if Utils.isMusicOn() {
+           runAction(SKAction.playSoundFileNamed(sound, waitForCompletion: false))
+        }
     }
    
     override func update(currentTime: CFTimeInterval) {
+       
         guard let lastTick = lastTick else {
             return
         }
         let timePassed = lastTick.timeIntervalSinceNow * -1000.0
         if timePassed > tickLengthMillis {
             self.lastTick = NSDate()
-            tick?()
+            
+                 tick?()
+            
+           
         }
     }
     
@@ -88,6 +97,20 @@ class GameScene: SKScene {
     
     func stopTicking() {
         lastTick = nil
+    }
+    
+    func pauseGame(){
+       self.view?.paused = true
+        for node in self.children as [SKNode] {
+            node.paused = true
+        }
+    }
+    
+    func resumeGame(){
+         self.view?.paused = false
+        for node in self.children as [SKNode] {
+            node.paused = false
+        }
     }
     
     func pointForColumn(column: Int, row: Int) -> CGPoint {
@@ -147,6 +170,7 @@ class GameScene: SKScene {
             }
         }
     }
+     
     
     // #1
     func animateCollapsingLines(linesToRemove: Array<Array<Block>>, fallenBlocks: Array<Array<Block>>, completion:() -> ()) {

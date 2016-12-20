@@ -37,11 +37,13 @@ class MenuViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewWillAppear(animated)
-         backgroundAudio.play()
-        if self.isMusicOn() {
+        
+        if Utils.isMusicOn() {
             self.btnMusic.selected = false
+             backgroundAudio.play()
         }else{
             self.btnMusic.selected = true
+            backgroundAudio.pause()
         }
     }
    
@@ -61,11 +63,13 @@ class MenuViewController: UIViewController {
             
         }
         vc.block = {[weak self] () -> ()  in
-            self?.backgroundAudio.play()
-            if self?.isMusicOn() == true {
+            
+            if Utils.isMusicOn() == true {
                 self?.btnMusic.selected = false
+                self?.backgroundAudio.play()
             }else{
                 self?.btnMusic.selected = true
+                self?.backgroundAudio.pause()
             }
         }
        
@@ -73,20 +77,26 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func btnRateTouch(sender: AnyObject) {
-    }
-    @IBAction func btnMusicTouch(sender: AnyObject) {
-    }
-    func setMusic(){
-        let prefs = NSUserDefaults.standardUserDefaults()
-        let isMusicOn = prefs.boolForKey("music")
-        prefs.setValue(!isMusicOn, forKey: "music")
-        prefs.synchronize()
+        if let checkURL = NSURL(string: "http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=\(appId)&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8") {
+            if UIApplication.sharedApplication().openURL(checkURL) {
+                print("url successfully opened")
+            }
+        } else {
+            print("invalid url")
+        }
     }
     
-    func isMusicOn() -> Bool {
-        let prefs = NSUserDefaults.standardUserDefaults()
-        let isMusicOn = prefs.boolForKey("music")
-        return isMusicOn
+    @IBAction func btnMusicTouch(sender: AnyObject) {
+        Utils.setMusic()
+        if Utils.isMusicOn() {
+            self.btnMusic.selected = false
+            backgroundAudio.play()
+        }else{
+            self.btnMusic.selected = true
+            backgroundAudio.pause()
+        }
     }
+    
+    
 
 }
