@@ -17,7 +17,7 @@ let NumRows = ScreenSize.IS_IPHONE_4_OR_LESS ? 18 : ScreenSize.IS_IPHONE_5 ? 20 
 let StartingColumn = 4
 let StartingRow = 0
 
-let PreviewColumn = ScreenSize.IS_IPHONE_5_OR_LESS ? 12 : 14
+let PreviewColumn = ScreenSize.IS_IPHONE_5_OR_LESS ? 12 : ScreenSize.IS_IPHONE_6P ? 16 : 14
 let PreviewRow =  ScreenSize.IS_IPHONE_4_OR_LESS ? 2 : 3
 
 let PointsPerLine = 10
@@ -114,27 +114,7 @@ class Swiftris {
         delegate?.gameShapeDidDrop(self)
     }
     
-//    func dropShape() {
-//        guard let shape = fallingShape else {
-//            return
-//        }
-//        var rowDown = numRownDown
-//        while detectIllegalPlacement() == false {
-//           
-//            shape.lowerShapeByOneRow()
-//            if rowDown <= 0 {
-//                
-//                break
-//            }
-//             rowDown -= 1
-//        }
-//       
-//        if detectIllegalPlacement() == true {
-//            shape.raiseShapeByOneRow()
-//            delegate?.gameShapeDidDrop(self)
-//        }
-//      
-//    }
+ 
     
     // #5
     func letShapeFall() {

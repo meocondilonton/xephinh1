@@ -58,6 +58,7 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         swiftris.beginGame()
         scene.playSound("Sounds/new_game.mp3")
         scene.playBgSound()
+        
         // Present the scene.
         skView.presentScene(scene)
         
@@ -80,6 +81,11 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         }
         
 
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     func interstitialAdDidLoad(interstitialAd: FBInterstitialAd) {
