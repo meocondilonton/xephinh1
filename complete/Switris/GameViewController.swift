@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import FBAudienceNetwork
 
-class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognizerDelegate ,FBInterstitialAdDelegate {
+class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognizerDelegate ,FBInterstitialAdDelegate ,FBAdViewDelegate{
     
     
    
@@ -18,6 +18,7 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     
     @IBOutlet weak var contraitHudScore: NSLayoutConstraint!
     
+    @IBOutlet weak var banner1: UIView!
    
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -64,6 +65,14 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         interstitialAd.delegate = self
         interstitialAd.loadAd()
         
+        
+        let adView = FBAdView(placementID: "219892538457986_221355851644988", adSize: kFBAdSizeHeight50Banner, rootViewController: self)
+       
+        adView.frame = banner1.bounds
+        adView.delegate = self
+        adView.loadAd()
+        
+        banner1.addSubview(adView)
         if Utils.isMusicOn() {
             self.btnMusic.selected = false
         }else{
@@ -189,7 +198,9 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
                 prefs.setValue(highScore, forKey: "highScore")
                 prefs.synchronize()
             }
-//              self?.interstitialAd.showAdFromRootViewController(self)
+            if self?.interstitialAd.adValid == true {
+              self?.interstitialAd.showAdFromRootViewController(self)
+            }
             
         }
     }
