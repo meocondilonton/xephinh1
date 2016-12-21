@@ -10,7 +10,7 @@ import SpriteKit
 import AVFoundation
 
 let BlockSize:CGFloat = 20.0
-let TickLengthLevelOne = NSTimeInterval(800)
+let TickLengthLevelOne = NSTimeInterval(700)
 
 class GameScene: SKScene {
     

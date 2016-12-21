@@ -21,7 +21,7 @@ let PreviewColumn = ScreenSize.IS_IPHONE_5_OR_LESS ? 12 : 14
 let PreviewRow =  ScreenSize.IS_IPHONE_4_OR_LESS ? 2 : 3
 
 let PointsPerLine = 10
-let LevelThreshold = 500
+let LevelThreshold = 400
 
 let numRownDown = 5
 
