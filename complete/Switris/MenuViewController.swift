@@ -24,7 +24,14 @@ class MenuViewController: UIViewController {
     }
 
     func gotoForceground(notification: NSNotification){
-        self.backgroundAudio.play()
+      
+        if Utils.isMusicOn() {
+            
+            backgroundAudio.play()
+        }else{
+            
+            backgroundAudio.pause()
+        }
     }
     
     func gotoBackground(notification: NSNotification){

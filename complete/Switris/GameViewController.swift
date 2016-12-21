@@ -34,7 +34,8 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     var panPointReference:CGPoint?
     var enableTouch:Bool = false
     var block:(()->())?
-
+    var isDropdowning:Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Configure the view.
@@ -188,7 +189,7 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
                 prefs.setValue(highScore, forKey: "highScore")
                 prefs.synchronize()
             }
-              self?.interstitialAd.showAdFromRootViewController(self)
+//              self?.interstitialAd.showAdFromRootViewController(self)
             
         }
     }
@@ -242,7 +243,19 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
     }
     
     @IBAction func btnDownTouch(sender: AnyObject) {
-        swiftris.dropShape()
+        if (!isDropdowning){
+            isDropdowning = true
+               swiftris.dropShape()
+            let dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(0.2 * Double(NSEC_PER_SEC)))
+            dispatch_after(dispatchTime, dispatch_get_main_queue(), {
+                self.dropDown()
+            })
+        }
+     
+    }
+    
+    func dropDown(){
+        isDropdowning = false
     }
     
     @IBAction func btnRotateTouch(sender: AnyObject) {

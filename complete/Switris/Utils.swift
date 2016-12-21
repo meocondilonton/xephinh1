@@ -19,8 +19,13 @@ class Utils: NSObject {
     
    class func isMusicOn() -> Bool {
         let prefs = NSUserDefaults.standardUserDefaults()
-        let isMusicOn = prefs.boolForKey("music") ?? true
+       if prefs.objectForKey("music") != nil {
+        let isMusicOn = prefs.boolForKey("music")  
         return isMusicOn
+       }else{
+        return true
+    }
+    
     }
 
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-let appId = 1040912970
+let appId = 1188328335
 
 let is_ipad = UIDevice.currentDevice().userInterfaceIdiom == .Pad ? true : false
 struct ScreenSize
