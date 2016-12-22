@@ -67,7 +67,7 @@ class GameViewController: UIViewController, SwiftrisDelegate, UIGestureRecognize
         interstitialAd.loadAd()
         
         
-        let adView = FBAdView(placementID: "219892538457986_221355851644988", adSize: kFBAdSizeHeight50Banner, rootViewController: self)
+        let adView = FBAdView(placementID: "219892538457986_221355851644988", adSize: kFBAdSizeHeight90Banner, rootViewController: self)
        
         adView.frame = banner1.bounds
         adView.delegate = self
